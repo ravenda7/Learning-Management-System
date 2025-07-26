@@ -62,7 +62,7 @@ export default function SignupForm() {
         onSuccess: () => {
             reset();
             toast.success("User created successfully");
-            router.push("/auth/sign-in");
+            router.push("/sign-in");
         },
         onError: (error:any) => {
             console.error("Sign up error:", error);
@@ -77,12 +77,12 @@ export default function SignupForm() {
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-between">
                 <div className="space-y-2 flex-1">
                     <Label htmlFor="name">Name</Label>
-                    <Input id="name" {...register("name")} />
+                    <Input id="name" {...register("name")} placeholder="Enter your name" />
                     {errors.name && <p className="text-red-500 text-sm -mt-1">{errors.name.message}</p>}
                 </div>
                 <div className="space-y-2 flex-1">
                     <Label htmlFor="email">Email</Label>
-                    <Input id="email" type="email" {...register("email")} />
+                    <Input id="email" type="email" {...register("email")} placeholder="Enter your email" />
                     {errors.email && <p className="text-red-500 text-sm -mt-1">{errors.email.message}</p>}
                 </div>
             </div>
@@ -90,7 +90,7 @@ export default function SignupForm() {
                 <div className="space-y-2 flex-1">
                     <Label htmlFor="password">Password</Label>
                     <div className="relative">
-                    <Input {...register("password")}  type={showPassword ? "text" : "password"} />
+                    <Input {...register("password")}  type={showPassword ? "text" : "password"} placeholder="Enter your password" />
                     <button
                         type="button"
                         onClick={() => setShowPassword(!showPassword)}
@@ -104,7 +104,7 @@ export default function SignupForm() {
                 <div className="space-y-2 flex-1">
                     <Label htmlFor="confirmPassword">Confirm Password</Label>
                     <div className="relative">
-                    <Input  {...register("confirmPassword")} type={showConfirmPassword ? "text" : "password"} />
+                    <Input  {...register("confirmPassword")} type={showConfirmPassword ? "text" : "password"} placeholder="Enter confirm password"  />
                     <button
                         type="button"
                         onClick={() => setShowConfirmPassword(!showConfirmPassword)}

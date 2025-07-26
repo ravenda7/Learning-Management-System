@@ -19,7 +19,9 @@ export default function Header (){
                     </ul>
                 </div>
                 <div>
+                    <Link href="sign-in">   
                     <Button>Sign in</Button>
+                    </Link>
                 </div>
             </div>
         </header>
